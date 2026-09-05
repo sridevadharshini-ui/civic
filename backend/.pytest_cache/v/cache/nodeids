@@ -1,0 +1,7 @@
+[
+  "tests/test_api.py::test_analytics_endpoints",
+  "tests/test_api.py::test_auth_flow",
+  "tests/test_api.py::test_health_check",
+  "tests/test_api.py::test_inspection_full_flow",
+  "tests/test_api.py::test_product_crud"
+]
