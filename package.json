@@ -5,6 +5,10 @@
   "scripts": {
     "dev": "npm --prefix frontend run dev",
     "build": "npm --prefix frontend run build",
+    "start": "serve -s frontend/dist",
     "backend": "cd backend && uvicorn app.main:app --reload --port 8000"
+  },
+  "dependencies": {
+    "serve": "^14.2.6"
   }
 }
