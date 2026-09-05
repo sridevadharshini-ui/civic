@@ -1,7 +1,19 @@
 import axios from 'axios';
 import { Inspection, Complaint, ComplianceRule, User, DashboardAnalytics, ScanResult, Product } from '../types';
 
-const API_BASE = (import.meta as any).env?.VITE_API_BASE_URL || '/api';
+const getApiBaseUrl = (): string => {
+  const envUrl = (import.meta as any).env?.VITE_API_BASE_URL;
+  let base = envUrl ? String(envUrl).trim() : 'https://backend-one-coral-93.vercel.app/api';
+  if (base.endsWith('/')) {
+    base = base.slice(0, -1);
+  }
+  if (!base.endsWith('/api')) {
+    base = `${base}/api`;
+  }
+  return base;
+};
+
+const API_BASE = getApiBaseUrl();
 
 export const apiClient = axios.create({
   baseURL: API_BASE,
